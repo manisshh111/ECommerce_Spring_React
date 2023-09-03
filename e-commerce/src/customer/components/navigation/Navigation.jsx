@@ -163,7 +163,7 @@ export default function Example() {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 z-40 flex">
+          <div className="fixed inset-0 z-60 flex">
             <Transition.Child
               as={Fragment}
               enter="transition ease-in-out duration-300 transform"
