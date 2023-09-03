@@ -11,6 +11,7 @@ const MainCarousel = () => {
 
 
   return (
+    <div className='-z-10'>
     <AliceCarousel
     items={items}
     disableButtonsControls
@@ -19,6 +20,8 @@ const MainCarousel = () => {
     infinite
 
     />
+    </div>
+    
   )
 }
 
