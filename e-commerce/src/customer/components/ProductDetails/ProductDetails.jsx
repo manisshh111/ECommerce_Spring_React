@@ -22,9 +22,11 @@
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
-import { Box, Grid, Rating } from '@mui/material'
+import { Box, Grid, LinearProgress, Rating } from '@mui/material'
 import {Button} from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
+import { mens_kurta } from '../../../data/mens_kurta'
+import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -284,13 +286,49 @@ export default function ProductDetails() {
             <p className='opacity-60'>59484</p>
           </div>
 
-          <Box>
+          <Box className="mt-5 space-y-3">
             <Grid container justifyContent="center" alignContent="center" gap={2}>
               <Grid item xs={2}>
                 <p>Excellent</p>
               </Grid>
               <Grid item xs={7}>
-                
+                <LinearProgress sx={{bgcolor:"#d0d0d0", borderRadius:4, height:7}} variant='determinate' value={60} color='success' />
+              </Grid>
+            </Grid>
+
+            <Grid container justifyContent="center" alignContent="center" gap={2}>
+              <Grid item xs={2}>
+                <p>Very Good</p>
+              </Grid>
+              <Grid item xs={7}>
+                <LinearProgress sx={{bgcolor:"#d0d0d0", borderRadius:4, height:7}} variant='determinate' value={30} color='success' />
+              </Grid>
+            </Grid>
+
+            <Grid container justifyContent="center" alignContent="center" gap={2}>
+              <Grid item xs={2}>
+                <p>Good</p>
+              </Grid>
+              <Grid item xs={7}>
+                <LinearProgress sx={{bgcolor:"#d0d0d0", borderRadius:4, height:7}} variant='determinate' value={25} color='info' />
+              </Grid>
+            </Grid>
+
+            <Grid container justifyContent="center" alignContent="center" gap={2}>
+              <Grid item xs={2}>
+                <p>Average</p>
+              </Grid>
+              <Grid item xs={7}>
+                <LinearProgress sx={{bgcolor:"#d0d0d0", borderRadius:4, height:7}} variant='determinate' value={20} color='warning' />
+              </Grid>
+            </Grid>
+
+            <Grid container justifyContent="center" alignContent="center" gap={2}>
+              <Grid item xs={2}>
+                <p>Poor</p>
+              </Grid>
+              <Grid item xs={7}>
+                <LinearProgress sx={{bgcolor:"#d0d0d0", borderRadius:4, height:7}} variant='determinate' value={15} color='error' />
               </Grid>
             </Grid>
           </Box>
@@ -298,6 +336,14 @@ export default function ProductDetails() {
         </Grid>
        </Grid>
      </div>
+   </section>
+
+   {/* Similar Products */}
+   <section className='pt-10'>
+    <h1 className='py-5 text-xl font-bold'>Similar Products</h1>
+    <div className='flex flex-wrap space-y-5'>
+      {mens_kurta.map((item)=><HomeSectionCard product={item}/>)}
+    </div>
    </section>
 
        
