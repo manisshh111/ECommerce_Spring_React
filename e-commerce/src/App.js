@@ -4,13 +4,15 @@ import Navigation from './customer/components/navigation/Navigation';
 import HomePage from './customer/components/pages/HomePage';
 import Footer from './customer/components/Footer/Footer';
 import ProductDetails from './customer/components/ProductDetails/ProductDetails';
+import Cart from './customer/components/Cart/Cart';
 
 function App() {
   return (
     <div className="App">
       <Navigation></Navigation>
       {/* <HomePage></HomePage> */}
-      <ProductDetails/>
+      {/* <ProductDetails/> */}
+      <Cart/>
       
       <Footer/>
     </div>
