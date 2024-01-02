@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
+import AdjustIcon from '@mui/icons-material/Adjust';
 
 const OrderCard = () => {
   return (
@@ -23,9 +24,18 @@ const OrderCard = () => {
         </Grid>
 
         <Grid item xs={4}>
+          {true && 
         <p>
+          <AdjustIcon/>
             <span>Delivered on March 03.</span>
         </p>
+
+          }
+          {false && <p>
+            <span>
+              Expected Delivery on Mar 03
+            </span>
+            </p>}
         </Grid>
 
 

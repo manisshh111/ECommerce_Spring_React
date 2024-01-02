@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <Navigation></Navigation>
-      {/* <HomePage></HomePage>
-      <ProductDetails/> */}
+       {/* <HomePage></HomePage> */}
+      {/* <ProductDetails/>  */}
       {/* <Cart/> */}
       {/* <CheckOut/> */}
       {/* <Product/> */}
