@@ -15,6 +15,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import AuthModal from '../../Auth/AuthModal'
+import { Button } from '@mui/material'
 
 const navigation = {
   categories: [
@@ -145,6 +147,15 @@ function classNames(...classes) {
 
 export default function Example() {
   const [open, setOpen] = useState(false)
+  const [openAuthModal, setOpenAuthModal] = useState(false);
+
+  const handleOpen = () => {
+    setOpenAuthModal(true);
+  };
+  const handleClose = () => {
+    setOpenAuthModal(false);
+   
+  };
 
   return (
     <div className="bg-white z-50">
@@ -421,13 +432,17 @@ export default function Example() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  {/* <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Create account
-                  </a>
+                  </a> */}
+
+                  <Button onClick={handleOpen} className='text-gray-700 hover:text-gray-800'>
+                    Signin
+                  </Button>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
@@ -466,6 +481,8 @@ export default function Example() {
           </div>
         </nav>
       </header>
+
+      <AuthModal handleClose={handleClose} open={openAuthModal}/>
     </div>
   )
 }

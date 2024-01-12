@@ -26,7 +26,7 @@ const OrderCard = () => {
         <Grid item xs={4}>
           {true && 
         <p>
-          <AdjustIcon/>
+          <AdjustIcon sx={{width:"15px"}}/>
             <span>Delivered on March 03.</span>
         </p>
 
