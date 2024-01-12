@@ -1,26 +1,22 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navigation from './customer/components/navigation/Navigation';
-import HomePage from './customer/components/pages/HomePage';
-import Footer from './customer/components/Footer/Footer';
-import ProductDetails from './customer/components/ProductDetails/ProductDetails';
-import Cart from './customer/components/Cart/Cart';
-import CheckOut from './customer/components/Checkout/Checkout';
-import Product from './customer/components/ProductDetails/Product';
-import Order from './customer/components/Order/Order';
+import Navigation from './customer/Components/Navbar/Navigation';
+import CustomerRoutes from './Routers/CustomerRoutes';
+import AdminRoutes from './Routers/AdminRoutes';
+import NotFound from './Pages/Notfound';
+import AdminPannel from './Admin/AdminPannel';
+// import Routers from './Routers/Routers';
 
 function App() {
+  const isAdmin=true;
   return (
-    <div className="App">
-      <Navigation></Navigation>
-       <HomePage></HomePage>
-      {/* <ProductDetails/>  */}
-      {/* <Cart/> */}
-      {/* <CheckOut/> */}
-      {/* <Product/> */}
-      {/* <Order/> */}
+    <div className="">
       
-      <Footer/>
+      <Routes>
+        <Route path="/*" element={<CustomerRoutes />} />
+        <Route path="/admin/*" element={<AdminPannel />} />
+        
+      </Routes>
     </div>
   );
 }
