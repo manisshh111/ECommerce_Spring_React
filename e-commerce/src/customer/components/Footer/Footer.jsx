@@ -73,7 +73,7 @@ const Footer = () => {
           &copy; 2023 My Company. All rights reserved.
         </Typography>
         <Typography variant="body2" component="p" align="center">
-          Made with love by Me.
+          Developed by Manish
         </Typography>
         <Typography variant="body2" component="p" align="center">
           Icons made by{' '}
